@@ -16,7 +16,7 @@ Implementation of the paper:
 
 ## Environment set up
 ```
-git clone https://github.com/QuIIL/gpc](https://github.com/QuIIL/CAMP
+git clone https://github.com/QuIIL/CAMP
 cd CAMP
 conda create --name CAMP --file requirements.txt
 conda activate CAMP
