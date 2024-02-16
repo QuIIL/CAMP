@@ -23,8 +23,8 @@ conda activate CAMP
 pip install -r requirements.txt
 ```
 
-## Datasets
 
+## Datasets
 <ul>
   <li>Colon-1 and Colon-2: <a href="https://github.com/QuIIL/KBSMC_colon_cancer_grading_dataset">link</a> </li>
   <li>UHU: <a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/OCYCMP">link</a></li>
@@ -40,6 +40,22 @@ pip install -r requirements.txt
   <li>BACH: <a href="https://zenodo.org/records/3632035">link</a></li>
   <li>PCam: <a href="https://github.com/basveeling/pcam">link</a></li>
 </ul>
+
+
+## Models
+<ul>
+  <li>ConvNeXt-B: <a href="https://pytorch.org/vision/stable/models/generated/torchvision.models.convnext_base.html#torchvision.models.ConvNeXt_Base_Weights">link</a> </li>
+  <li>EfficientNetV2-S: <a href="https://pytorch.org/vision/stable/models/generated/torchvision.models.convnext_base.html#torchvision.models.ConvNeXt_Base_Weights">link</a></li>
+  <li>ResNet50: <a href="https://pytorch.org/vision/stable/models/generated/torchvision.models.resnet50.html#torchvision.models.ResNet50_Weights">link</a></li>
+  <li>RegNet: <a href="https://pytorch.org/vision/stable/models/generated/torchvision.models.regnet_x_16gf.html#torchvision.models.RegNet_X_16GF_Weights">link</a></li>
+  <li>ResNeXt50: <a href="https://pytorch.org/vision/stable/models/generated/torchvision.models.resnext50_32x4d.html#torchvision.models.ResNeXt50_32X4D_Weights">link</a></li>
+  <li>MaxViT: <a href="https://pytorch.org/vision/stable/models/generated/torchvision.models.maxvit_t.html#torchvision.models.MaxVit_T_Weights">link</a></li>
+  <li>SwinV2-B: <a href="https://pytorch.org/vision/stable/models/generated/torchvision.models.swin_v2_b.html#torchvision.models.Swin_V2_B_Weights">link</a></li>
+  <li>ViT-B: <a href="https://pytorch.org/vision/stable/models/generated/torchvision.models.vit_b_16.html#torchvision.models.ViT_B_16_Weights">link</a></li>
+  <li>PLIP: <a href="https://huggingface.co/vinid/plip">link</a></li>
+  <li>CTransPath: <a href="https://github.com/Xiyue-Wang/TransPath">link</a></li>
+  <li>GPC: <a href="https://github.com/QuIIL/GPC">link</a></li>
+  <li>GIT-B: <a href="https://huggingface.co/docs/transformers/en/model_doc/git">link</a></li>
 
 
 ## Training
