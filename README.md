@@ -1,4 +1,4 @@
-# GPC: Generative and general pathology image classifier
+# CAMP: Classify Anything Model in Pathology
 
 ## Overview
 
