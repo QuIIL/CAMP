@@ -230,14 +230,51 @@ def main():
         train_set, valid_set = data[0], data[1]
     else:
         raise ValueError('Not contains a splitted training data')
+
+    if args.encoder_type == 'uni':
+        transform_train = transforms.Compose(
+        [   
+            transforms.ToTensor(),
+            transforms.Resize((224,224)),
+            transforms.Normalize(mean=(0.485, 0.456, 0.406), std=(0.229, 0.224, 0.225)),
+        ]
+        )
+        transform_test = transform_train
+        args.layers_dim = [1024, 2048, 4096, 2048, 768]
+        print(args.layers_dim)
+    elif args.encoder_type == 'quiltnet':
+        _ , transform_train, transform_test = open_clip.create_model_and_transforms('hf-hub:wisdomik/QuiltNet-B-16-PMB')
+    elif args.encoder_type == 'phikon':
+        from transformers import AutoImageProcessor
+        transform_train = AutoImageProcessor.from_pretrained("owkin/phikon")
+        transform_test = transform_train
+        args.layers_dim = [768, 1024, 4096, 2048, 768]
+    elif args.encoder_type == 'ctranspath':
+        transform_train = transforms.Compose([
+            transforms.RandomResizedCrop((224, 224), scale=(0.05, 1.0)),
+            transforms.RandomHorizontalFlip(),
+            transforms.ToTensor(),
+            transforms.Normalize(IMAGENET_DEFAULT_MEAN, IMAGENET_DEFAULT_STD),
+        ])
+        transform_test = transforms.Compose([
+            transforms.Resize(int((256 / 224) * 224)),
+            transforms.CenterCrop(224),
+            transforms.ToTensor(),
+            transforms.Normalize(IMAGENET_DEFAULT_MEAN, IMAGENET_DEFAULT_STD),
+        ])
+    
+    if args.type == 'single_encoder':
+        model = SingleEncoder(args)
+    else:
+        model = PromptModel(args)
     
     if args.type != 'single_encoder':
         model = PromptModel(args)
     elif args.type == 'single_encoder':
         model = SingleEncoder(args, get_num_class(args.dataset))
     
-    train_dataset = ImageDataset(train_set, args)
-    valid_dataset = ImageDataset(valid_set, args, train=False)
+    train_dataset = ImageDataset(train_set, args, transform=transform_train)
+    valid_dataset = ImageDataset(valid_set, args, transform=transform_test)
 
     train(args, train_dataset, valid_dataset, model)
 
