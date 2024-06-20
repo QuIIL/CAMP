@@ -1,5 +1,6 @@
 from sklearn.metrics import precision_score, recall_score, f1_score, accuracy_score, cohen_kappa_score
 from datasets.dataset import get_caption
+
 def calculate_metrics(dataset, ground_truth_list, prediction_list):
     metrics = {}
     if dataset in ['colon-1', 'colon-2', 'prostate-1', 'prostate-2', 'prostate-3',
@@ -32,11 +33,9 @@ def calculate_metrics(dataset, ground_truth_list, prediction_list):
         except:
             metrics['valid_avg'] = 0
 
-    elif dataset in ['k19', 'k16', 'breakhis','pcam', 'medfm', 'unitopath', 'luad']:
+    elif dataset in ['k19', 'k16', 'breakhis','pcam', 'medfm', 'unitopath', 'luad', 'c16', 'panda_wsi', \
+                     'huncrc_wsi', 'dhmc_wsi','bracs_wsi_7', 'bracs_wsi_3', 'huncrc_patch']:
         metrics['valid_acc'] = accuracy_score(ground_truth_list, prediction_list)
-        # metrics['valid_f1'] = f1_score(ground_truth_list, prediction_list, average='macro', labels=get_caption(dataset, label_type))
-        # metrics['valid_pre'] = precision_score(ground_truth_list, prediction_list, labels=get_caption(dataset, label_type), average='macro')
-        # metrics['valid_rec'] = recall_score(ground_truth_list, prediction_list, labels=get_caption(dataset, label_type), average='macro')
         metrics['valid_f1'] = f1_score(ground_truth_list, prediction_list, average='macro', labels=list(set(ground_truth_list)))
         metrics['valid_pre'] = precision_score(ground_truth_list, prediction_list, labels=list(set(ground_truth_list)), average='macro')
         metrics['valid_rec'] = recall_score(ground_truth_list, prediction_list, labels=list(set(ground_truth_list)), average='macro')
