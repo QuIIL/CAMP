@@ -59,14 +59,14 @@ def main():
                                               'prostate-1','prostate-2','prostate-3',
                                               'gastric', 'k19', 'kidney', 'liver', 
                                               'bach', 'breakhis', 'pcam', 'panda',
-                                              'k16', 'unitopath', 'bladder'],
+                                              'k16', 'unitopath', 'bladder', 'luad', 'unitopatho']
                         default='prostate-1')
 
     # Testing configuaration
     parser.add_argument('--bs', type=int, default=256)
     parser.add_argument('--device', type=int, default=0)
     parser.add_argument('--generate_length', type=int, default=12)
-    parser.add_argument('--model_pth', type=str, default='/data4/anhnguyen/experiments/prompt_work/single_encoder/kidney-AdamW-cosine-resnet50--474/kidney-AdamW-cosine-resnet50--474-5.pt')
+    parser.add_argument('--model_pth', type=str, default=None)
     
     # Saving configuration
     parser.add_argument('--out_dir', default='/data4/anhnguyen/experiments/prompt_work/testing/')
