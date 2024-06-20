@@ -1,14 +1,14 @@
-# CAMP: Classify Anything Model in Pathology
+# CAMP: Continuous and Adaptive Learning Model in Pathology
 
 ## Overview
 
 Implementation of the paper: 
 
 > **CAMP: Classify Anything Model in Pathology** \
-> Anh Tien Nguyen and Jin Tae Kwak 
+> Anh Tien Nguyen, Keunho Byeon, Kyungeun Kim, Boram Song, Seoung Wan Chae, and Jin Tae Kwak
 
 #### Abstract
-> There exist numerous diagnostic tasks in pathology. The conventional computational pathology formulates and tackles them as independent and individual image classification problems, thereby resulting in computational inefficiency and high costs. To address the challenges, we propose a generic, unified, and universal framework, named as classify anything model in pathology (CAMP), for pathology image classification. CAMP is a generative, efficient, and adaptive classification model that can continuously adapt to any classification tasks by leveraging the pathology-specific prior knowledge and learning task-specific knowledge with minimal computational cost and without forgetting the knowledge from the existing tasks. We evaluated CAMP on a collection of 15 datasets, including 742,780 pathology images, across 10 distinct classification tasks. CAMP achieves state-of-the-art classification performance regardless of the type of datasets and tasks, substantially outperforming the conventional image classification models in computational pathology. CAMP is also able to reduce up to 94% of computation time and 85% of storage memory in comparison to the conventional models. Our results demonstrate that CAMP is a fundamental transformation in the field of computational pathology at unprecedented fashion, paving the way for the fully digitized and computerized practice of pathology.
+> There exist numerous diagnostic tasks in pathology. Conventional computational pathology formulates and tackles them as independent and individual image classification problems, thereby resulting in computational inefficiency and high costs. To address the challenges, we propose a generic, unified, and universal framework, called a continuous and adaptive learning model in pathology (CAMP), for pathology image classification. CAMP is a generative, efficient, and adaptive classification model that can continuously adapt to any classification task by leveraging pathology-specific prior knowledge and learning task-specific knowledge with minimal computational cost and without forgetting the knowledge from the existing tasks. We evaluated CAMP on 22 datasets, including 1,171,526  patches and 11,811 pathology slides, across 17 classification tasks. CAMP achieves state-of-the-art classification performance on a wide range of datasets and tasks at both patch- and slide-levels and reduces up to 94\% of computation time and 85\% of storage memory in comparison to the conventional classification models. Our results demonstrate that CAMP can offer a fundamental transformation in pathology image classification, paving the way for the fully digitized and computerized pathology practice.
 
 
 #### Architecture
