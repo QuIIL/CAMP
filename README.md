@@ -64,8 +64,13 @@ pip install -r requirements.txt
   <li>GIT-B: <a href="https://huggingface.co/docs/transformers/en/model_doc/git">link</a></li>
 
 
-## Training
-Sample command for training with colon-1 (please check the default arguments)
+## Step by Step Instruction
+
+### Step 1: Training
+The code for training is mainly based on the file `train.py`. 
+The arguments are important for the training setting includes `dataset` (dataset to train), `lora_r` (rank of LoRA), `lora_alpha` (alpha of LoRA), and `out_dir` to save the training results. Please refer to the file `train.py` for the default arguments of other arguments.
+
+Sample command for training with colon-1.
 ```
 python train.py \
     --dataset colon-1
@@ -76,8 +81,11 @@ python train.py \
 ```
 
 
-### Testing
-Sample command for testing with colon-1 (please check the default arguments)
+### Step 2: Testing
+The code for training is mainly based on the file `test.py`. 
+The arguments are important for the training setting includes `dataset` (dataset to test), `model_pth` (path of a test model), and `out_dir` to save the testing results. Please refer to the file `test.py` for the default arguments of other arguments.
+
+Sample command for testing with colon-1.
 ```
 python test.py \
     --dataset colon-1
